@@ -172,7 +172,6 @@ The simulation uses the background model distributed by the official Panda3D.
 In the "model" folder, download the assets by executing the following command.
 
 ```
-# In the directory containing main.py
 cd ./simulation/model/
 git clone https://github.com/panda3d/panda3d
 ```
