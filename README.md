@@ -254,6 +254,15 @@ You can parse the results and review the results by executing the following comm
 python3 parseResult.py
 ```
 
+### Draw graph
+
+You can draw a graph of the relationship between time and signal strength calculated within the simulation after running the simulation with graphFlag = 1.
+You can draw the graph by executing the following command and specifying the experiment number and target ID.
+
+```
+python3 graphViewer.py.py
+```
+
 # Contact
 
 If you have any questions or operational problems, feel free to contact Nomoto Kazuki at the e-mail address given in the paper.
