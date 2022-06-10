@@ -260,7 +260,7 @@ You can draw a graph of the relationship between time and signal strength calcul
 You can draw the graph by executing the following command and specifying the experiment number and target ID.
 
 ```
-python3 graphViewer.py.py
+python3 graphViewer.py
 ```
 
 # Contact
