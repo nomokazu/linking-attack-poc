@@ -3125,7 +3125,7 @@ def main():
 
     shutil.copy("./main.py","./" + str(experimentNumber) + "/" + "main.py")
 
-    if modelFlag == 0:
+    if modelFlag == 0 and graphFlag == 0:
         try:
             with Pool(processes=cores) as pool:
                 pool.map(do,allSettingList)
