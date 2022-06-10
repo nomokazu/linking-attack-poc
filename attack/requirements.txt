@@ -3,7 +3,7 @@ fonttools==4.33.3
 jarowinkler==1.0.2
 kiwisolver==1.4.2
 Levenshtein==0.18.1
-matplotlib==3.5.2
+matplotlib==3.5.1
 numpy==1.22.4
 opencv-python==4.5.5.64
 packaging==21.3

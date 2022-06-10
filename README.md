@@ -33,7 +33,7 @@ You need to install the following Python libraries.
     - jarowinkler==1.0.2
     - kiwisolver==1.4.2
     - Levenshtein==0.18.1
-    - matplotlib==3.5.2
+    - matplotlib==3.5.1
     - numpy==1.22.4
     - opencv-python==4.5.5.64
     - packaging==21.3
@@ -130,7 +130,7 @@ You need to install the following Python libraries.
     - fonttools==4.33.3
     - joblib==1.1.0
     - kiwisolver==1.4.2
-    - matplotlib==3.5.2
+    - matplotlib==3.5.1
     - numpy==1.22.4
     - opencv-python==4.5.5.64
     - packaging==21.3
@@ -217,23 +217,18 @@ In addition, you can try simulations under various conditions by changing the fo
 
 In the second and subsequent runs, please be sure to delete the directories corresponding to the respective experiment numbers before running the experiment.
 
-If you experiment with the parameters of the paper, it will take longer to run the simulation.
-To test the running of the simulation, specify 1 for targetFlag in the main() function.
-
 Running a simulation with 10,000 pedestrians per hour is excluded from the default settings because it would take an enormous amount of time to run the simulation.
 If you want to set it to 10,000, you can try the simulation by adding it to the perTimeList list. 
 
-```
-targetFlag = 0
-```
-
-By doing so, the number of pedestrians per hour will be reduced and the simulation will be completed in a relatively short time.
 
 #### Flag in main()
 - graphFlag : Do you want to draw a graph?
 - modelFlag :  Do you output 3D modeling?
 - mixFlag : Mix signal strength of two different devices?
 - directionFlag : Walking direction of pedestrians
+
+Note that if graphFlag or ModelFlag is set to 1, the simulation is performed using only the first parameter.
+
 
 #### Parameters in prepareXXXX()
 - perTimeList : List of number of pedestrians per hour
@@ -251,7 +246,7 @@ We provide a parser of the experimental results.
 You can parse the results and review the results by executing the following command and selecting the type of experiment.
 
 ```
-python3 parseResult.py
+python3 resultParser.py
 ```
 
 ### Draw graph
