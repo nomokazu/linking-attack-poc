@@ -1,3 +1,10 @@
+# Artifcat
+
+This repository is an artifact of "On the Feasibility of Linking Attack to Google/Apple Exposure Notification Framework
+Kazuki Nomoto (Waseda University), Mitsuaki Akiyama (NTT), Masashi Eto (Ministry of Internal Affairs and Communications (MIC)), Atsuo Inomata (Osaka University), and Tatsuya Mori (Waseda University/NICT/RIKEN AIP)".
+
+It includes a PoC for conducting a Linking Attack against GAEN and a simulation program to evaluate the attack success rate.
+
 # Attack
 
 This is a PoC for Linking Attack against GAEN.
@@ -212,6 +219,8 @@ Each experimental number corresponds to a section in the paper.
 - 5 : Section 5.4
 - 6 : Section 5.4
 - 7 : Appendix C
+
+If you just want to make sure the program works, I suggest you choose the experimental type 6.
 
 In addition, you can try simulations under various conditions by changing the following variables (flags).
 
