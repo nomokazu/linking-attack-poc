@@ -91,7 +91,7 @@ ubertooth-btle -n -q [experiment number].pcap
 #### After execution
 
 When execution is finished, BLE receiving in Terminal B must be stopped.  
-Please use "Ctrl+C" to top BLE receiving in Terminal B.  
+Please use "Ctrl+C" to stop BLE receiving in Terminal B.  
 After exiting with "Ctrl+C", type y as instructed by Terminal A.  
 
 ### Draw graph

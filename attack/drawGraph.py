@@ -72,8 +72,6 @@ def link(targetTime, targetRpi, picturedDir,experimentNumber, deviceNumber):
             minTime = capturedTime
     
     targetFilePath = filePath + "0_0_" + str(minTime) + ".jpg"
-    print("抽出ファイル対象 サイド")
-    print(minTime)
     img = cv2.imread(targetFilePath, cv2.IMREAD_COLOR)
     cv2.imwrite( './result' + '/' + str(experimentNumber) + '/' + str(deviceNumber)  +"/"+str(targetRpi)+"_"+str(minTime) + "_" + "side"+".jpg", img)
     targetSecondFilePath = targetFilePath
@@ -94,8 +92,6 @@ def link(targetTime, targetRpi, picturedDir,experimentNumber, deviceNumber):
             minTime = capturedTime
 
     targetFilePath = filePath + "0_1_" + str(minTime) + ".jpg"
-    print("抽出ファイル対象 フロント")
-    print(minTime)
     img = cv2.imread(targetFilePath, cv2.IMREAD_COLOR)
     cv2.imwrite( './result' + '/' + str(experimentNumber) + '/' + str(deviceNumber)  +"/"+str(targetRpi)+"_"+str(minTime)+ "_" + "front"+".jpg", img)    
 
@@ -114,7 +110,6 @@ def dirCheck(experimentNumber, deviceNumber):
         if not os.path.exists(filePath):
             os.makedirs(filePath)
 
-# 信号強度が2連続で同じ時に、間に平均値のデータを入れるための関数
 def mitigate(timeList, signalStrengthList):
 
     beforeSignalStrength = -1
@@ -126,7 +121,6 @@ def mitigate(timeList, signalStrengthList):
         flag = 0
         for i, signalStrengh in enumerate(signalStrengthList):
             if timeList[i] > alreadyChekcTime:
-                # 4連続同じとき
                 if len(signalStrengthList) - i > 4:
                     if signalStrengthList[i] == signalStrengthList[i + 1] and signalStrengthList[i + 1] == signalStrengthList[i + 2] and signalStrengthList[i + 2] == signalStrengthList[i + 3]:
                         aveTime = (timeList[i + 1] + timeList[i + 2]) / 2
@@ -136,7 +130,6 @@ def mitigate(timeList, signalStrengthList):
                         alreadyChekcTime = timeList[i + 3]
                         flag = 1
                         break
-                # 3連続同じとき
                     elif signalStrengthList[i] == signalStrengthList[i + 1] and signalStrengthList[i + 1] == signalStrengthList[i + 2]:
                         aveTime = timeList[i + 1]
                         aveSig = signalStrengthList[i + 1] + 0.1
@@ -146,7 +139,6 @@ def mitigate(timeList, signalStrengthList):
                         flag = 1
                         break
 
-                # 2連続同じとき
                     elif signalStrengthList[i] == signalStrengthList[i + 1]:
                         aveTime = (timeList[i] + timeList[i + 1]) / 2
                         aveSig = (signalStrengthList[i] + signalStrengthList[i + 1]) / 2 + 0.1
@@ -156,7 +148,6 @@ def mitigate(timeList, signalStrengthList):
                         flag = 1
                         break
         if flag == 0:
-            print("Flag 判定")
             break
 
     return timeList, signalStrengthList
@@ -193,7 +184,6 @@ def makeGraph(allRPIList, timeSignalStrengthFilePath, picturedFilePathSide, pict
     labelNumber = 1
     print("allRPIList : " + str(allRPIList))
     for count,targetRpi in enumerate(allRPIList):
-        # グラフのlegendに表示するラベルの番号
         print("targetRPI : " + str(targetRpi))
 
         timeList = []
@@ -211,7 +201,6 @@ def makeGraph(allRPIList, timeSignalStrengthFilePath, picturedFilePathSide, pict
 
         timeList, signalStrengthList = mitigate(timeList, signalStrengthList)
 
-        # 時刻を0スタートにするための新しい時刻配列とそれの処理
         zeroStartTimeStart = []
 
         for aTime in timeList:
@@ -227,7 +216,6 @@ def makeGraph(allRPIList, timeSignalStrengthFilePath, picturedFilePathSide, pict
         if maxSignalStrength >= maxSignalStrengthThreshold:
             maxIndex = signalStrengthList.index(maxSignalStrength)
 
-            # ピーク値検出
             print(signalStrengthList[maxIndex])
             print(timeList[maxIndex]-minTime)
 
@@ -236,7 +224,7 @@ def makeGraph(allRPIList, timeSignalStrengthFilePath, picturedFilePathSide, pict
 
             ax.plot(zeroStartTimeStart, signalStrengthList, label="RPI "+str(labelNumber), marker="o", markersize=12)
 
-            print("ピーク時刻 : " + str(zeroStartTimeStart[maxIndex]))
+            print("peakTime : " + str(zeroStartTimeStart[maxIndex]))
             ax.plot(zeroStartTimeStart[maxIndex], maxSignalStrength, 'b*', markersize=28)
 
             ax.set_ylim(-85,5)
@@ -255,7 +243,6 @@ def makeGraph(allRPIList, timeSignalStrengthFilePath, picturedFilePathSide, pict
     cid = fig.canvas.mpl_connect('button_press_event', onclick)
     plt.show()
 
-# 時間-信号強度グラフをずらしたのでその分クリックされた座標を補正しないといけないのでその処理
 def getMinTime(filePath):
     timeSignalStrengthFilePath = filePath + "0_GoodData.csv"
     timeList = []
