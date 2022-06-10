@@ -1,9 +1,11 @@
 # Artifcat
 
 This repository is an artifact of "On the Feasibility of Linking Attack to Google/Apple Exposure Notification Framework
-Kazuki Nomoto (Waseda University), Mitsuaki Akiyama (NTT), Masashi Eto (Ministry of Internal Affairs and Communications (MIC)), Atsuo Inomata (Osaka University), and Tatsuya Mori (Waseda University/NICT/RIKEN AIP)".
+(Kazuki Nomoto, Mitsuaki Akiyama, Masashi Eto, Atsuo Inomata, and Tatsuya Mori)" in PoPETS 2022 (to appear).
 
-It includes a PoC for conducting a Linking Attack against GAEN and a simulation program to evaluate the attack success rate.
+I will place a link to the paper here when it is publicly available.
+
+This repository includes a PoC for conducting a Linking Attack against GAEN and a simulation program to evaluate the attack success rate.
 
 # Attack
 
@@ -82,10 +84,10 @@ python3 mainAll.py
 
 The following is a description of each parameter that is required to be entered after program execution.
 
-- Experiment Number : Experiment Number. You can decide freely.
-- Run Time : Capture execution time.
-- Camera Number Side : The ID assigned by OpenCV to the camera installed on the antenna side. (In most cases, it is one of 1, 2, or 3.)
-- Camera Number Front : The ID assigned by OpenCV to the camera installed on the front side. (In most cases, it is one of 1, 2, or 3.)
+- Experiment Number : The experiment number is used to distinguish the results of each experiment. You must enter an experiment number that does not duplicate a number already in the experiment. The experiment number must be 0 or positive integer.
+- Run Time : Capture execution time. For example, if you specify 30, the camera captures images and Ubertooth receives BLE for 30 seconds.
+- Camera Number Side : The device ID assigned by OpenCV to the camera installed on the antenna side. (In most cases, it is one of 1, 2, or 3.)
+- Camera Number Front : The device ID assigned by OpenCV to the camera installed on the front side. (In most cases, it is one of 1, 2, or 3.)
 
 #### Terminal B
 
@@ -99,7 +101,7 @@ ubertooth-btle -n -q [experiment number].pcap
 
 When execution is finished, BLE receiving in Terminal B must be stopped.  
 Please use "Ctrl+C" to stop BLE receiving in Terminal B.  
-After exiting with "Ctrl+C", type y as instructed by Terminal A.  
+After exiting with "Ctrl+C" in Terminal B, type y as instructed by Terminal A.  
 
 ### Draw graph
 
@@ -113,7 +115,7 @@ python3 drawGraph.py
 
 The following is a description of each parameter that is required to be entered after program execution.
 
-- Experiment Number : Experiment Number. Enter the experiment number entered in the Capture Phase.
+- Experiment Number : Enter the experiment number for which the graph is to be plotted. You must enter the experiment number that matches the experiment number entered in the Capture Phase. This means that if you specified the experiment number = 0 in mainAll.py, you must specify the experiment number = 0 here as well.
 
 ## Data Saving
 
@@ -222,30 +224,24 @@ Each experimental number corresponds to a section in the paper.
 
 If you just want to make sure the program works, I suggest you choose the experimental type 6.
 
-In addition, you can try simulations under various conditions by changing the following variables (flags).
-
 In the second and subsequent runs, please be sure to delete the directories corresponding to the respective experiment numbers before running the experiment.
 
-Running a simulation with 10,000 pedestrians per hour is excluded from the default settings because it would take an enormous amount of time to run the simulation.
-If you want to set it to 10,000, you can try the simulation by adding it to the perTimeList list. 
-
+Running a simulation with 10,000 pedestrians per hour is excluded from the default settings because it would take an enormous amount of time to run the simulation. If you want to set it to 10,000, you can try the simulation by adding it to the "perTimeList" list. 
 
 #### Flag in main()
-- graphFlag : Do you want to draw a graph?
-- modelFlag :  Do you output 3D modeling?
-- mixFlag : Mix signal strength of two different devices?
-- directionFlag : Walking direction of pedestrians
+- graphFlag : Do you want to draw a graph? If graphFlag = 1, then graph data showing the relationship between time and signal strength is stored.
+- modelFlag :  Do you output 3D modeling? If modelFlag = 1, then the image of the 3D model at the time when the signal strength corresponding to each RPI reached its maximum is stored.
+- mixFlag : Mix signal strength of two different devices? If mixFlag = 1, then the simulation is run under the condition of a mix of smartphones with two different signal strengths.
 
 Note that if graphFlag or ModelFlag is set to 1, the simulation is performed using only the first parameter.
 
-
 #### Parameters in prepareXXXX()
-- perTimeList : List of number of pedestrians per hour
-- rpiSendFrequencyList : Transmission frequency of RPI
-- widthOfRoad : Witdth of street
-- receiverSettings : List of receivers
-- reSend : Number of consecutive transmissions during intermittent transmission
+You can try simulations under various conditions by changing the following parameters.
 
+- perTimeList : The number of pedestrians per hour is stored. For example, if a value of 1200 is specified, a simulation of 1200 pedestrians per hour walking in front of the attacking device is run.
+- rpiSendFrequencyList : The signal transmission frequency of the RPI is stored. For example, if a value of 0.270 is specified, each smartphone advertises an RPI on BLE every 0.270 seconds.
+- widthOfRoad : It means the width of the street where pedestrians walk.
+- receiverSettings : Receiver settings such as receiver location and antenna angle are stored.
 
 ### Parse Result
 
