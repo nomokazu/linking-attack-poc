@@ -208,7 +208,7 @@ Please input experiment type.
 3 : Pedestrians walk in groups
 5 : Use of Open Data
 6 : Same conditions as Open Data
-7 : Various road widths
+7 : Road widths
 experiment type :
 ```
 
