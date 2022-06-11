@@ -92,7 +92,7 @@ python3 mainAll.py
 The following is a description of each parameter that is required to be entered after program execution.
 
 - Experiment Number : The experiment number is used to distinguish the results of each experiment. You must enter an experiment number that does not duplicate a number already in the experiment. The experiment number must be 0 or positive integer.
-- Run Time : Capture execution time. For example, if you specify 30, the camera captures images and Ubertooth receives BLE for 30 seconds.
+- Run Time : The length of time for which the attacking program is executed. For example, if you specify 30, the camera captures images and Ubertooth receives BLE for 30 seconds.
 - Camera Number Side : The device ID assigned by OpenCV to the camera installed on the antenna side. (In most cases, it is one of 1, 2, or 3.)
 - Camera Number Front : The device ID assigned by OpenCV to the camera installed on the front side. (In most cases, it is one of 1, 2, or 3.)
 
