@@ -7,6 +7,13 @@ I will place a link to the paper here when it is publicly available.
 
 This repository includes a PoC for conducting a Linking Attack against GAEN and a simulation program to evaluate the attack success rate.
 
+This artifact provides a proof-of-concept to demonstrate a linking attack against GAEN and a simulation to evaluate the attack success rate of a linking attack.　The attack PoC allows a third party to evaluate the feasibility of a linking attack.　Several pieces of hardware are required to run this attack PoC.　Specifically, an Ubertooth One, two USB-connected webcams, and an antenna that can be connected to the Ubertooth One.
+
+In addition, the simulation allows a third party to evaluate the attack success rate of the linking attack.
+By publishing the simulation programs used in the paper, we help third parties to carefully check our implementation.
+
+We hope that these PoCs will be used by third parties to enhance the security of GAEN and other BLE applications.
+
 # Attack
 
 This is a PoC for Linking Attack against GAEN.
