@@ -236,8 +236,8 @@ Running a simulation with 10,000 pedestrians per hour is excluded from the defau
 
 #### Flag in main()
 - graphFlag : Do you want to draw a graph? If graphFlag = 1, then graph data showing the relationship between time and signal strength is stored.
-- modelFlag :  Do you output 3D modeling? If modelFlag = 1, then the image of the 3D model at the time when the signal strength corresponding to each RPI reached its maximum is stored.
-- mixFlag : Mix signal strength of two different devices? If mixFlag = 1, then the simulation is run under the condition of a mix of smartphones with two different signal strengths.
+- modelFlag : Do you output 3D modeling? If modelFlag = 1, then the image of the 3D model at the time when the signal strength corresponding to each RPI reached its maximum is stored.
+- mixFlag : Do you want to simulate a mix of smartphones with different signal strengths? If mixFlag = 1, then the simulation is run under the condition of a mix of smartphones with two different signal strengths.
 
 Note that if graphFlag or ModelFlag is set to 1, the simulation is performed using only the first parameter.
 
@@ -246,7 +246,7 @@ You can try simulations under various conditions by changing the following param
 
 - perTimeList : The number of pedestrians per hour is stored. For example, if a value of 1200 is specified, a simulation of 1200 pedestrians per hour walking in front of the attacking device is run.
 - rpiSendFrequencyList : The signal transmission frequency of the RPI is stored. For example, if a value of 0.270 is specified, each smartphone advertises an RPI on BLE every 0.270 seconds.
-- widthOfRoad : It means the width of the street where pedestrians walk.
+- widthOfRoad : Width of the street where pedestrians walk. For example, if the value is 3, the pedestrian walks on a 3 m wide street.
 - receiverSettings : Receiver settings such as receiver location and antenna angle are stored.
 
 ### Parse Result
