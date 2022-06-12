@@ -1,4 +1,4 @@
-# Artifcat
+# Artifact
 
 This repository is an artifact of "On the Feasibility of Linking Attack to Google/Apple Exposure Notification Framework
 (Kazuki Nomoto, Mitsuaki Akiyama, Masashi Eto, Atsuo Inomata, and Tatsuya Mori)" in PoPETS 2022 (to appear).
