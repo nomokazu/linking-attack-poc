@@ -276,4 +276,4 @@ If you have any questions or operational problems, feel free to contact Nomoto K
 # How to test our code
 PoC implementation of Attack requires hardwares. If you want to test the code at a minimum, an Ubertooth One, a common monopolar antenna and a webcam are all you need to test. If you have a computer with an Ubertooth One environment, you can easily build a PoC environment by simply installing the Python libraries listed in "./attack/requirements.txt". Note that Ubertooth One is sensitive to USB communication and may not work well in a virtual environment.
 
-For testing PoC implementation of Simulation, you only need to install the Python libraries listed in "./simulation/requirements.txt", and you can easily build the environment without any other dependencies. 
+For testing PoC implementation of Simulation, you only need to install the Python libraries listed in "./simulation/requirements.txt", and you can easily build the environment without any other dependencies. If you just want to make sure the program works, I suggest you choose the experimental type six.
