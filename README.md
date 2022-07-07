@@ -61,9 +61,20 @@ You need to install the following Python libraries.
     - scipy==1.8.1
     - six==1.16.0
 
+To avoid conflicts with existing Python environments, it is recommended to use a virtual environment using venv.
 You can install all libraries by executing the following command.
 
+(Mac/Linux user)
 ```
+python3 -m venv venv
+. ./venv/bin/activate
+pip3 install -r ./attack/requirements.txt
+```
+
+(Windows user)
+```
+python3 -m venv venv
+.\venv\Scripts\activate
 pip3 install -r ./attack/requirements.txt
 ```
 
