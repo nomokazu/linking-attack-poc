@@ -289,6 +289,8 @@ RPI number : 10
 ```
 
 We noted that the RPI number depends on the number of pedestrians per hour in main.py.
+We also noted that the legend may overlap the plot, depending on your screen resolution settings.
+If this occurs, manually resize the window displaying the graph.
 
 # Contact
 If you have any questions or operational problems, feel free to contact Nomoto Kazuki at the e-mail address given in the paper.
