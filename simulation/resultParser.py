@@ -106,6 +106,6 @@ def do(experimentNumber):
 
 
 if __name__ == "__main__":
-    experimentNumber = int(input("ExperimentNumber : "))
+    experimentNumber = int(input("Experiment type : "))
 
     do(experimentNumber)
