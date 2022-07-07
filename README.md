@@ -66,16 +66,18 @@ You can install all libraries by executing the following command.
 
 (Mac/Linux user)
 ```
+cd attack
 python3 -m venv venv
 . ./venv/bin/activate
-pip3 install -r ./attack/requirements.txt
+pip3 install -r ./requirements.txt
 ```
 
 (Windows user)
 ```
+cd attack
 python3 -m venv venv
 .\venv\Scripts\activate
-pip3 install -r ./attack/requirements.txt
+pip3 install -r ./requirements.txt
 ```
 
 - Ubertooth One
@@ -175,6 +177,28 @@ You can install all libraries by executing the following command.
 ```
 pip3 install -r ./simulation/requirements.txt
 ```
+
+
+To avoid conflicts with existing Python environments, it is recommended to use a virtual environment using venv.
+You can install all libraries by executing the following command.
+
+(Mac/Linux user)
+```
+cd simulation
+python3 -m venv venv
+. ./venv/bin/activate
+pip3 install -r ./requirements.txt
+```
+
+(Windows user)
+```
+cd simulation
+python3 -m venv venv
+.\venv\Scripts\activate
+pip3 install -r ./requirements.txt
+```
+
+
 
 - Panda3D
 
