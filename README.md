@@ -1,5 +1,4 @@
 # Artifact
-
 This repository is an artifact of "On the Feasibility of Linking Attack to Google/Apple Exposure Notification Framework
 (Kazuki Nomoto, Mitsuaki Akiyama, Masashi Eto, Atsuo Inomata, and Tatsuya Mori)" in PoPETS 2022 (to appear).
 
@@ -15,13 +14,11 @@ By publishing the simulation programs used in the paper, we help third parties c
 We hope that these the code of a PoC implementations will be used by third parties to enhance the security of GAEN and other BLE applications.
 
 # Attack
-
 This is the code of a PoC implementation for Linking Attack against GAEN.
 
 "attack" folder contains all files.
 
 ## Requirement (Hardware)
-
 The following hardware devices are required  
 Please connect each device.
 
@@ -87,15 +84,12 @@ Set up the Ubertooth software to allow BLE packet capture.
 Official Documentation : https://ubertooth.readthedocs.io/en/latest/index.html
 
 ## How to use
-
 Go to "attack" folder.
 
 ### Capture images and BLE
-
 You open two terminal A and terminal B.
 
 #### Terminal A
-
 Start capturing the camera by executing the following command
 
 ```
@@ -110,7 +104,6 @@ The following is a description of each parameter that is required to be entered 
 - Camera Number Front : The device ID assigned by OpenCV to the camera installed on the front side. (In most cases, it is one of 1, 2, or 3.)
 
 #### Terminal B
-
 Start capturing BLE by executing the following command
 
 ```
@@ -118,13 +111,11 @@ ubertooth-btle -n -q [experiment number].pcap
 ```
 
 #### After execution
-
 When execution is finished, BLE receiving in Terminal B must be stopped.  
 Please use "Ctrl+C" to stop BLE receiving in Terminal B.  
 After exiting with "Ctrl+C" in Terminal B, type y as instructed by Terminal A.  
 
 ### Draw graph
-
 Draw a graph by executing the following command.  
 A graph is displayed. Click on the graph to see the image at the matching time.
 
@@ -138,11 +129,9 @@ The following is a description of each parameter that is required to be entered 
 - Experiment Number : Enter the experiment number for which the graph is to be plotted. You must enter the experiment number that matches the experiment number entered in the Capture Phase. This means that if you specified the experiment number = 0 in mainAll.py, you must specify the experiment number = 0 here as well.
 
 ## Data Saving
-
 The data recorded by this PoC implementation is stored in the "data" and "result" folders for each experiment number.
 
 # Simulation
-
 This is a simulation to evaluate the attack success rate of a linking attack against GAEN.
 
 "simulation" folder contains all files.
@@ -191,8 +180,6 @@ python3 -m venv venv
 pip3 install -r ./requirements.txt
 ```
 
-
-
 - Panda3D
 
 This simulation uses Panda3D, a 3D rendering & game engine, to render the images.  
@@ -219,12 +206,9 @@ URL : https://www.geospatial.jp/ckan/dataset/human-flow-marunouchi
 
 
 ## How to use
-
 Go to "simulation" folder.
 
-
 ### Run a simulation
-
 Running the simulation is very simple.  
 Simply run the Python program with the command shown below to run the simulation.
 
@@ -278,7 +262,6 @@ You can try simulations under various conditions by changing the following param
 - receiverSettings : Receiver settings such as receiver location and antenna angle are stored.
 
 ### Parse Result
-
 Experiment results are stored in a directory corresponding to the number of each experiment type.
 
 We provide a parser of the experimental results.
@@ -289,16 +272,26 @@ python3 resultParser.py
 ```
 
 ### Draw graph
-
 You can draw a graph of the relationship between time and signal strength calculated within the simulation after running the simulation with graphFlag = 1.
-You can draw the graph by executing the following command and specifying the experiment number and target ID.
+You can draw the graph by executing the following command and specifying the experiment type and target's RPI number.
 
 ```
 python3 graphViewer.py
 ```
 
-# Contact
+#### Attention
+The parameters set in program main.py need to be modified in order to draw a graph. More specifically, it is necessary to modify the "graphFlag = 1" at line 3055 and then execute main.py. By doing so, the graph data of the signal strength variation used in the simulation is saved.
+For example, if you run main.py with an experiment type 6, enter the following at the prompt
 
+```
+Experiment type : 6
+RPI number : 10
+```
+
+We noted that the RPI number depends on the number of pedestrians per hour in main.py.
+
+
+# Contact
 If you have any questions or operational problems, feel free to contact Nomoto Kazuki at the e-mail address given in the paper.
 
 # How to test our code
