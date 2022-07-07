@@ -213,7 +213,7 @@ Running the simulation is very simple.
 Simply run the Python program with the command shown below to run the simulation.
 
 ```
-python main.py
+python3 main.py
 ```
 
 After the run, you can select the type of simulation.  
