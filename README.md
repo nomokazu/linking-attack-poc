@@ -280,7 +280,7 @@ python3 graphViewer.py
 ```
 
 #### Attention
-The parameters set in program main.py need to be modified in order to draw a graph. More specifically, it is necessary to modify the "graphFlag = 1" at line 3055 and then execute main.py. By doing so, the graph data of the signal strength variation used in the simulation is saved.
+The parameters set in program main.py need to be modified in order to draw a graph. More specifically, it is necessary to modify the "graphFlag = 1" at line 3055 in main.py and then execute main.py. By doing so, the graph data of the signal strength variation used in the simulation is saved.
 For example, if you run main.py with an experiment type 6, enter the following at the prompt in graphViewer.py.
 
 ```
