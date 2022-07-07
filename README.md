@@ -172,13 +172,6 @@ You need to install the following Python libraries.
     - scipy==1.8.1
     - six==1.16.0
 
-You can install all libraries by executing the following command.
-
-```
-pip3 install -r ./simulation/requirements.txt
-```
-
-
 To avoid conflicts with existing Python environments, it is recommended to use a virtual environment using venv.
 You can install all libraries by executing the following command.
 
