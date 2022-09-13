@@ -1,6 +1,7 @@
 # Artifact
 This repository is an artifact of "On the Feasibility of Linking Attack to Google/Apple Exposure Notification Framework
-(Kazuki Nomoto, Mitsuaki Akiyama, Masashi Eto, Atsuo Inomata, and Tatsuya Mori)" in PoPETS 2022 (to appear).
+(Kazuki Nomoto, Mitsuaki Akiyama, Masashi Eto, Atsuo Inomata, and Tatsuya Mori)" in PoPETS 2022.
+https://petsymposium.org/2022/files/papers/issue4/popets-2022-0103.pdf
 
 I will place a link to the paper here when it is publicly available.
 
